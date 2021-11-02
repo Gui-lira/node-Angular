@@ -7,7 +7,7 @@ const SECRET = process.env.SECRET || 'segredo';
 export default function verifyToken(token: string) {
     try {
         const payload  = jwt.verify(token, SECRET);
-        return payload;
+        return payload.valueOf();
     } catch (e) {
         return false;
     }

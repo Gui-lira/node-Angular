@@ -3,7 +3,7 @@ import { connection } from "./connection";
 
 export default async function deleteOne(collectionName: string, id: string) {
     const obj = {
-        id: new ObjectId(id)
+        _id: new ObjectId(id)
     };
     const db = await connection();
     await db.collection(collectionName).find(obj);

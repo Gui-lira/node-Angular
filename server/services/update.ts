@@ -2,12 +2,12 @@ import update from "../models/update";
 import { ObjectId } from "bson";
 
 export default async function updateElements(collectionName: string, params: object, elements: object, id: string = '') {
-    let validation = true;
+    let validation: any = true;
     if (id.length === 0) {
-        await update(collectionName, params, elements).catch(() => validation = false);
+        validation =  await update(collectionName, params, elements).catch(() => false);
         return validation;
     }
-    const newId = { id: new ObjectId(id) };
-    await update(collectionName, newId, elements);
-    return validation;
+    const newId = { _id: new ObjectId(id) };
+    validation =  await update(collectionName, newId, elements);    
+    return validation
 }
