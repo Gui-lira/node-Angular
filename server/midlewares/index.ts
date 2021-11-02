@@ -2,16 +2,18 @@ import verifyColorAndModel from "./verifyColorAndModel";
 import verifyEmail from "./verifyEmail";
 import verifyLogin from "./verifyLogin";
 import verifyName from "./verifyName";
+import verifyPassword from "./verifyPassword";
 import verifyPlate from "./verifyPlate";
 import verifyTokenUser from "./verifyToken";
 
-const index = {
+const midlewares = {
     verifyPlate,
     verifyName,
     verifyLogin,
     verifyEmail,
     verifyColorAndModel,
     verifyTokenUser,
+    verifyPassword,
 };
 
-export default index;
+export default midlewares;
