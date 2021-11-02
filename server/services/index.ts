@@ -1,4 +1,4 @@
-import update from "../models/update";
+import updateElements from "./update";
 import deleteElement from "./delete";
 import get from "./get";
 import insert from "./insert";
@@ -7,7 +7,7 @@ import verifyToken from "./verifyToken";
 
 const index = {
     verifyToken,
-    update,
+    updateElements,
     signToken,
     deleteElement,
     insert,

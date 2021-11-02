@@ -6,6 +6,6 @@ export default async function deleteOne(collectionName: string, id: string) {
         id: new ObjectId(id)
     };
     const db = await connection();
-    await db.collection(collectionName).deleteOne(obj);
+    await db.collection(collectionName).find(obj);
     return null;
 }
