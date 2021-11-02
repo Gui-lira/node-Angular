@@ -3,6 +3,7 @@ import verifyEmail from "./verifyEmail";
 import verifyLogin from "./verifyLogin";
 import verifyName from "./verifyName";
 import verifyPlate from "./verifyPlate";
+import verifyTokenUser from "./verifyToken";
 
 const index = {
     verifyPlate,
@@ -10,4 +11,7 @@ const index = {
     verifyLogin,
     verifyEmail,
     verifyColorAndModel,
-}
+    verifyTokenUser,
+};
+
+export default index;
