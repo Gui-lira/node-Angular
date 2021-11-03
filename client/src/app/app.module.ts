@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CarRentalComponent } from './car-rental/car-rental.component';
+import { CarComponent } from './car/car.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    CarRentalComponent
+    CarRentalComponent,
+    CarComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,7 @@
-<p>car-rental works!</p>
+<div>
+    <div *ngFor="let car of cars">
+        <h1>{{car.model}}</h1>
+        <p>{{car.color}}</p>
+        <button (click)="onClick(car[_id])">Rent</button>
+    </div>
+</div>
