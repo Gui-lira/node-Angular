@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RouterModule,  Routes, RouterLink } from '@angular/router';
+import { ReactiveFormsModule, FormsModule, FormGroup, FormBuilder } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CarRentalComponent } from './car-rental/car-rental.component';
 import { ProfileComponent } from './profile/profile.component';
+
+const routes: Routes = [  
+  { path: '', component: LoginComponent },
+  { path: 'rentalCars', component: CarRentalComponent },
+  { path: 'myCar', component: ProfileComponent },
+  { path: 'register', component:RegisterComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+];
 
 @NgModule({
   declarations: [
@@ -17,17 +25,13 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent,    
   ],
   imports: [
-    RouterModule.forRoot([
-        { path: '', component: LoginComponent },
-        { path: 'rentalCars', component: CarRentalComponent },
-        { path: 'myCar', component: ProfileComponent },
-        { path: 'register', component:RegisterComponent },
-    ]),
+    RouterModule.forRoot(routes),
+    RouterModule,
     BrowserModule,    
     ReactiveFormsModule,
-    FormsModule,    
+    FormsModule,        
   ],
-  providers: [],
+  providers: [RouterLink, FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

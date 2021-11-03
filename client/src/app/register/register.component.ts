@@ -15,10 +15,10 @@ export class RegisterComponent {
   ) { };
   
   registerForm = this.formBuilder.group({
-    email: '',
-    password: '',
-    cpf: '',
-    name: '',
+    email: [''],
+    password: [''],
+    cpf: [''],
+    name: [''],
   });
 
   private redirect(): void {

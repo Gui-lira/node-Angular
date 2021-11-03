@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import axios from 'axios';
 
 @Component({
@@ -10,19 +10,19 @@ import axios from 'axios';
 })
 export class LoginComponent  {
 
-  loginForm = this.formBuilder.group({
-    email: '',
-    password: '',
-  });
+  loginForm: any;
 
   warning = '';
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
-    public routerLink: RouterLink,
-    public fromGroup: FormGroup,
-  ) { }
+    private router: Router,        
+  ) {
+    this.loginForm = this.formBuilder.group({
+      email: [''],
+      password: [''],
+    });
+  }
 
   private redirect(): void {
     this.router.navigate(['rentalCars']);
