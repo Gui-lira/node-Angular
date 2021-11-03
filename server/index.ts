@@ -54,9 +54,9 @@ app.post('/user/login', verifyLogin, loginUser);
 
 app.post('/car', verifyColorAndModel, verifyPlate, putCars);
 
-app.get('/car/all', getAllCars);
+app.get('/car/all', verifyTokenUser, getAllCars);
 
-app.get('/car', getAvailableCars);
+app.get('/car', verifyTokenUser, getAvailableCars);
 
 app.delete('/car/:id', isAdmin, deleteCar);
 
