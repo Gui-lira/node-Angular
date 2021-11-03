@@ -27,7 +27,8 @@ export class CarRentalComponent implements OnInit {
     }
   }
 
-  async onClick(id: string): Promise<void> {
+  async onClick(car: any): Promise<void> {
+    const id = car['_id'];
     const token = localStorage.getItem('token');
     await axios.post(`http://localhost:3000/car/rent/${ id }`, { headers: { authorization: token }});
     this.redirect();

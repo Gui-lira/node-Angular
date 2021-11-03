@@ -1,6 +1,7 @@
-<form [formGroup]="LoginForm">
+<form [formGroup]="loginForm">
 
     <button class="button" type="submit">Login</button>
     <h1>{{warning}}</h1>
-  
+    <a [routerLink]="['register']">Register</a>
   </form>
+  <router-outlet></router-outlet>

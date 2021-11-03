@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import axios from 'axios';
 
@@ -7,8 +7,10 @@ import axios from 'axios';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
+
 export class ProfileComponent implements OnInit {  
-  constructor(
+  constructor(   
+    @Inject(Object)
     public car: any,
     private router: Router,    
   ) { }

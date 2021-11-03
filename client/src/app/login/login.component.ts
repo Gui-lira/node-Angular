@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import axios from 'axios';
 
 @Component({
@@ -20,6 +20,8 @@ export class LoginComponent  {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    public routerLink: RouterLink,
+    public fromGroup: FormGroup,
   ) { }
 
   private redirect(): void {

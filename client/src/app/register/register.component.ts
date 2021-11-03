@@ -14,7 +14,7 @@ export class RegisterComponent {
     private router: Router,
   ) { };
   
-  registerFrom = this.formBuilder.group({
+  registerForm = this.formBuilder.group({
     email: '',
     password: '',
     cpf: '',
@@ -26,7 +26,7 @@ export class RegisterComponent {
   };
 
   async onSubmit(): Promise<void> {
-    const { value } = this.registerFrom;
+    const { value } = this.registerForm;
     const raw = await axios.post('http://localhost:3000/user');
     if (raw.status === 200) {
       localStorage.setItem('token', raw.data.token);
